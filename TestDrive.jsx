@@ -3,7 +3,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { cars } from "./data/cars";
 import "./TestDrive.css";
 import { useAuth } from "./AuthContext";
-const { user } = useAuth();
 
 export default function TestDrive() {
   const { brand, slug } = useParams();
