@@ -7,7 +7,7 @@ export const cars = [
     rating: "★★★★★",
     starting: "STARTING FROM",
     price: "₹57.00 Lakh",
-    img: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800",
+    img: "/s-klasse_3840-2160.jpg",
     specs: { engine: "3.0L Inline-6 Turbo", power: "429 hp", zeroToHundred: "4.8s", topSpeed: "250 km/h", drivetrain: "AWD" },
   },
   {
@@ -17,7 +17,7 @@ export const cars = [
     rating: "★★★★★",
     starting: "STARTING FROM",
     price: "₹78.50 Lakh",
-    img: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800",
+    img: "/1131057.png",
     specs: { engine: "2.0L Turbo", power: "255 hp", zeroToHundred: "6.2s", topSpeed: "240 km/h", drivetrain: "RWD" },
   },
   {
@@ -27,7 +27,7 @@ export const cars = [
     rating: "★★★★★",
     starting: "STARTING FROM",
     price: "₹75.90 Lakh",
-    img: "https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?w=800",
+    img: "/glc.jpg",
     specs: { engine: "2.0L Inline-4", power: "255 hp", zeroToHundred: "6.2s", topSpeed: "230 km/h", drivetrain: "4MATIC" },
   },
   {
@@ -37,10 +37,9 @@ export const cars = [
     rating: "★★★★★",
     starting: "STARTING FROM",
     price: "₹1.79 Crore",
-    img: "https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?w=800",
+    img: "/cclass.jpg",
     specs: { engine: "2.0L Turbo", power: "201 hp", zeroToHundred: "7.1s", topSpeed: "245 km/h", drivetrain: "RWD" },
   },
-
   // BMW
   {
     brand: "bmw",
@@ -48,8 +47,8 @@ export const cars = [
     name: "BMW M4 Competition",
     rating: "★★★★★",
     starting: "STARTING AT",
-    price: "₹87.00 Lakh",
-    img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800",
+    price:"₹87.00 Lakh",
+    img:"/BMW_M4.jpg",
     specs: {
       engine: "3.0L Twin-Turbo Inline-6",
       power: "503 hp",
@@ -65,7 +64,7 @@ export const cars = [
     rating: "★★★★★",
     starting: "STARTING AT",
     price: "₹5,45.00 Lakh",
-    img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800",
+    img:"/BMW_M5.jpg",
     specs: {
       engine: "4.4L Twin-Turbo V8",
       power: "627 hp",
@@ -81,7 +80,7 @@ export const cars = [
     rating: "★★★★☆",
     starting: "STARTING AT",
     price: "₹98.00 Lakh",
-    img: "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?w=800",
+    img:"/BMW_X5.jpg",
     specs: {
       engine: "4.4L Twin-Turbo V8",
       power: "617 hp",
@@ -97,7 +96,7 @@ export const cars = [
     rating: "★★★★☆",
     starting: "STARTING AT",
     price: "₹87.00 Lakh",
-    img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800",
+    img:"/BMW_i8.jpg",
     specs: {
       engine: "Hybrid (1.5L + Electric)",
       power: "369 hp",
@@ -106,7 +105,6 @@ export const cars = [
       drivetrain: "AWD",
     },
   },
-
   // PORSCHE
   {
     brand: "porsche",
@@ -115,7 +113,7 @@ export const cars = [
     rating: "★★★★★",
     starting: "STARTING AT",
     price: "₹99.00 Lakh",
-    img: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=800",
+    img:"/2025_Porsche.jpg",
     specs: {
       engine: "3.7L Twin-Turbo Flat-6",
       power: "640 hp",
@@ -131,7 +129,7 @@ export const cars = [
     rating: "★★★★★",
     starting: "STARTING AT",
     price: "₹1.24.00 Lakh",
-    img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800",
+    img:"/Porsche_Tay.jpg",
     specs: {
       engine: "Dual Electric Motors",
       power: "Up to 670 hp",
@@ -147,7 +145,7 @@ export const cars = [
     rating: "★★★★☆",
     starting: "STARTING AT",
     price: "₹1,53.00 Lakh",
-    img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800",
+    img:"/Porsche_Cayenne.jpg",
     specs: {
       engine: "4.0L Twin-Turbo V8",
       power: "631 hp",
@@ -163,7 +161,7 @@ export const cars = [
     rating: "★★★★☆",
     starting: "STARTING AT",
     price: "₹5,45.00 Lakh",
-    img: "https://images.unsplash.com/photo-1611821064430-0d40291d0f0d?w=800",
+    img:"/2022_Porsche_718.jpg",
     specs: {
       engine: "4.0L Flat-6",
       power: "493 hp",
