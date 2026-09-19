@@ -5,6 +5,7 @@ import "./TestDrive.css";
 import { useAuth } from "./AuthContext";
 
 export default function TestDrive() {
+  const { user } = useAuth();  
   const { brand, slug } = useParams();
   const navigate = useNavigate();
 
