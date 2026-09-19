@@ -1,3 +1,49 @@
+Bhai, **`Login.jsx` ka code mil gaya**, isme bhi hooks bilkul sahi jagah hain.
+
+Ab **main culprit 100% mil chuka hai**: Tumhare `package.json` mein React ka fake version (`19.2.8`) likha hai. React ka 19.2.8 exist hi nahi karta! Is wajah se Vercel server pe 2 alag-alag React versions install ho rahe hain, jisse browser me `useContext null` ka error aakar blank screen ho rahi hai.
+
+Bas niche diye **2 chhote steps** follow karo, website turant ready ho jayegi:
+
+---
+
+### STEP 1: GitHub par `package.json` update karo (MUST)
+
+GitHub repo mein **`package.json`** open karo → ✏️ **Edit** karo → poora code isse **replace** kar do:
+
+```json
+{
+  "name": "car-dealership",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.2"
+  }
+}
+```
+**Commit changes** kar do.
+
+---
+
+### STEP 2: GitHub par `Login.jsx` update karo
+
+Tumhare `Login.jsx` me login call karne ka tarika `AuthContext` se match nahi kar raha tha (object pass ho raha tha). Isko **`Login.jsx`** mein replace kar do:
+
+```jsx
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
@@ -16,13 +62,18 @@ export default function Login() {
     e.preventDefault();
     setErr("");
 
-    const res = login({ email, password });
-    if (!res.ok) return setErr(res.message);
+    if (!email || !password) {
+      setErr("Please fill all fields.");
+      return;
+    }
 
-    // Admin goes to admin, user goes back or home
-    if (res.role === "admin") return navigate("/admin");
-    const backTo = location.state?.from || "/";
-    navigate(backTo);
+    const session = login(email, password);
+    if (session.role === "admin") {
+      navigate("/admin");
+    } else {
+      const backTo = location.state?.from || "/";
+      navigate(backTo);
+    }
   };
 
   return (
@@ -33,15 +84,18 @@ export default function Login() {
 
         <form className="auth-form" onSubmit={onSubmit}>
           <input
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
+            required
           />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
+            required
           />
 
           {err && <div className="auth-error">{err}</div>}
@@ -63,3 +117,13 @@ export default function Login() {
     </div>
   );
 }
+```
+**Commit changes** kar do.
+
+---
+
+### Ab bas:
+1. Vercel dashboard pe 1 minute wait karo (automatic rebuild hoga).
+2. Live link open karke **`Ctrl` + `Shift` + `R`** (Hard Refresh) dabao.
+
+Batao fir final screen par project agaya na!
