@@ -4,7 +4,7 @@ import { useAuth } from "./AuthContext";
 import "./Auth.css";
 
 export default function Signup() {
-  const { signup } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -17,12 +17,12 @@ export default function Signup() {
     setErr("");
 
     if (!name || !email || !password) {
-      return setErr("All fields required");
+      setErr("All fields required");
+      return;
     }
 
-    const res = signup({ name, email, password });
-    if (!res.ok) return setErr(res.message);
-
+    // Login function se naya session create ho jayega
+    login(email, password, name);
     navigate("/");
   };
 
@@ -34,20 +34,25 @@ export default function Signup() {
 
         <form className="auth-form" onSubmit={onSubmit}>
           <input
+            type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Full Name"
+            required
           />
           <input
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
+            required
           />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
+            required
           />
 
           {err && <div className="auth-error">{err}</div>}
