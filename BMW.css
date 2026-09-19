@@ -1,0 +1,278 @@
+.bmw-page {
+  background: #050505;
+  color: white;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.bmw-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 55px;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+
+  z-index: 100;
+}
+
+.bmw-back-home {
+  color: white;
+  text-decoration: none;
+
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.bmw-nav-title {
+  font-size: 16px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.bmw-login {
+  background: white;
+  color: black;
+
+  border: none;
+
+  padding: 10px 23px;
+
+  cursor: pointer;
+}
+
+/* HERO */
+.bmw-hero {
+  height: 100vh;
+  min-height: 650px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background-image: url("https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.bmw-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75));
+}
+
+.bmw-hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+  padding: 30px;
+}
+
+.bmw-small-title {
+  letter-spacing: 7px;
+  font-size: 13px;
+  color: #cfcfcf;
+}
+
+.bmw-hero h1 {
+  font-size: clamp(55px, 8vw, 105px);
+  margin: 15px 0;
+
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+
+.bmw-hero-content > p:not(.bmw-small-title) {
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.bmw-collection-btn {
+  margin-top: 25px;
+
+  padding: 14px 30px;
+  border: none;
+
+  background: white;
+  color: black;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.bmw-collection-btn:hover {
+  background: #ccc;
+}
+
+/* CARS SECTION */
+.bmw-cars-section {
+  padding: 120px 7%;
+}
+
+.bmw-heading {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.bmw-heading p {
+  color: #999;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.bmw-heading h2 {
+  font-size: 48px;
+  margin: 15px 0;
+}
+
+.bmw-heading span {
+  color: #999;
+  font-size: 15px;
+}
+
+/* GRID */
+.bmw-car-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+/* CARD */
+.bmw-car-card {
+  background: #101010;
+  overflow: hidden;
+
+  transition: 0.4s;
+  border: 1px solid #1d1d1d;
+}
+
+.bmw-car-card:hover {
+  transform: translateY(-8px);
+  border-color: #444;
+}
+
+/* IMAGE */
+.bmw-car-image-container {
+  width: 100%;
+  height: 320px;
+
+  overflow: hidden;
+  background: #151515;
+}
+
+.bmw-car-image-container img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.bmw-car-card:hover img {
+  transform: scale(1.05);
+}
+
+/* INFO */
+.bmw-car-info {
+  padding: 28px;
+}
+
+.bmw-car-info h3 {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.bmw-rating {
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.bmw-starting {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.bmw-car-info h4 {
+  font-size: 23px;
+  margin: 0;
+}
+
+/* BUTTON */
+.bmw-car-explore {
+    text-decoration: none;
+display: inline-block;
+  margin-top: 22px;
+
+  padding: 12px 22px;
+
+  background: transparent;
+  border: 1px solid #777;
+
+  color: white;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.bmw-car-explore:hover {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+/* FOOTER */
+.bmw-footer {
+  padding: 60px 20px;
+  text-align: center;
+
+  border-top: 1px solid #222;
+  color: #777;
+}
+
+.bmw-footer h3 {
+  color: white;
+  letter-spacing: 4px;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .bmw-nav {
+    padding: 0 20px;
+  }
+
+  .bmw-nav-title {
+    display: none;
+  }
+
+  .bmw-hero h1 {
+    font-size: 48px;
+  }
+
+  .bmw-car-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bmw-heading h2 {
+    font-size: 36px;
+  }
+}
